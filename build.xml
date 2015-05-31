@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Project Managesment" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
- <!-- <property name="toolsdir" value=""/> -->
+ <property name="toolsdir" value="bin/"/>
 
  <!-- Uncomment the following when the tools are in ${basedir}/vendor/bin -->
- <property name="toolsdir" value="${basedir}/vendor/bin/"/>
+ <!-- <property name="toolsdir" value="${basedir}/vendor/bin/"/> -->
 
  <target name="build"
          depends="prepare,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox"
