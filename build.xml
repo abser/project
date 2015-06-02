@@ -204,13 +204,11 @@
   <property name="phpunit.done" value="true"/>
  </target>
 
- <target name="phpdox"
-         unless="phpdox.done"
-         depends="phploc-ci,phpcs-ci,phpmd-ci"
-         description="Generate project documentation using phpDox">
-  <exec executable="${toolsdir}phpdox" dir="${basedir}/build" taskname="phpdox"/>
-
-  <property name="phpdox.done" value="true"/>
+ <target name="phpdox" depends="phploc-ci,phpcs-ci,phpmd-ci" description="Generate project documentation using phpDox">
+  <exec executable="${toolsdir}phpdox">
+   <arg value="--file" />
+   <arg value="${basedir}/build/phpdox.xml" />
+  </exec>
  </target>
 </project>
 
